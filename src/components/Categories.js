@@ -1,4 +1,6 @@
 import { useState } from "react";
+import CategoriesList from "./CategoriesList";
+import CategoriesEdit from "./CategoriesEdit";
 
 export function Categories() {
   const [editing, setEditing] = useState(false);
@@ -6,7 +8,6 @@ export function Categories() {
   function closeModal() {
     setEditing(false);
   }
-
   return (
     <div>
       <div className="d-flex justify-content-between mb-4 p-5">
@@ -15,6 +16,8 @@ export function Categories() {
           Shine
         </button>
       </div>
+      <CategoriesList />
+      <CategoriesEdit show={editing} onClose={closeModal} />
     </div>
   );
 }
